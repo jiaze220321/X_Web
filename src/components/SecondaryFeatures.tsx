@@ -4,41 +4,41 @@ import { Container } from '@/components/Container'
 
 const features = [
   {
-    name: 'Invest any amount',
+    name: 'X LAB',
     description:
-      'Whether it’s $1 or $1,000,000, we can put your money to work for you.',
+      '包括MR实验室的场地设计、虚拟的地铁站和开车的场景',
     icon: DeviceArrowIcon,
   },
   {
-    name: 'Build a balanced portfolio',
+    name: 'X Man',
     description:
-      'Invest in different industries to find the most opportunities to win huge.',
+      '园林项目，识别鸟类声音和识别绿化，以及测量人脑电和心率的智能设备',
     icon: DeviceCardsIcon,
   },
   {
-    name: 'Trade in real-time',
+    name: 'X Edge',
     description:
-      'Get insider tips on big stock moves and act on them within seconds.',
+      '包括MR实验室的场地设计、虚拟的地铁站和开车的场景',
     icon: DeviceClockIcon,
   },
   {
-    name: 'Profit from your network',
+    name: 'X Sphere',
     description:
-      'Invite new insiders to get tips faster and beat even other Pocket users.',
+      '包括MR实验室的场地设计、虚拟的地铁站和开车的场景',
     icon: DeviceListIcon,
   },
-  {
-    name: 'Encrypted and anonymized',
-    description:
-      'Cutting-edge security technology that even the NSA doesn’t know about keeps you hidden.',
-    icon: DeviceLockIcon,
-  },
-  {
-    name: 'Portfolio tracking',
-    description:
-      'Watch your investments grow exponentially, leaving other investors in the dust.',
-    icon: DeviceChartIcon,
-  },
+  // {
+  //   name: 'Encrypted and anonymized',
+  //   description:
+  //     'Cutting-edge security technology that even the NSA doesn’t know about keeps you hidden.',
+  //   icon: DeviceLockIcon,
+  // },
+  // {
+  //   name: 'Portfolio tracking',
+  //   description:
+  //     'Watch your investments grow exponentially, leaving other investors in the dust.',
+  //   icon: DeviceChartIcon,
+  // },
 ]
 
 function DeviceArrowIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
@@ -196,16 +196,16 @@ export function SecondaryFeatures() {
       <Container>
         <div className="mx-auto max-w-2xl sm:text-center">
           <h2 className="text-3xl font-medium tracking-tight text-gray-900">
-            Now is the time to build your portfolio.
+            Now is the time to embark on your journey of intelligent engineering.
           </h2>
           <p className="mt-2 text-lg text-gray-600">
-            With typical market returns, you have to start young to secure your
-            future. With Pocket, it’s never too late to build your nest egg.
+            {/* Our products are designed to help you achieve your goals, no matter
+            how big or small. */}
           </p>
         </div>
         <ul
           role="list"
-          className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 text-sm sm:mt-20 sm:grid-cols-2 md:gap-y-10 lg:max-w-none lg:grid-cols-3"
+          className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 text-sm sm:mt-20 sm:grid-cols-2 md:gap-y-10 lg:max-w-none lg:grid-cols-4"
         >
           {features.map((feature) => (
             <li
