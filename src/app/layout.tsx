@@ -3,6 +3,7 @@ import clsx from 'clsx'
 
 import '@/styles/tailwind.css'
 import { type Metadata } from 'next'
+import nextI18NextConfig from '../../next-i18next.config.js'
 
 const inter = Inter({
   subsets: ['latin'],
