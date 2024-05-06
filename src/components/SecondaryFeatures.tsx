@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 import { useId } from 'react'
 
 import { Container } from '@/components/Container'
@@ -5,24 +7,28 @@ import { Container } from '@/components/Container'
 const features = [
   {
     name: 'X LAB',
+    link: '/X_LAB',
     description:
       '包括MR实验室的场地设计、虚拟的地铁站和开车的场景',
     icon: DeviceArrowIcon,
   },
   {
     name: 'X Man',
+    link: '/X_Man',
     description:
       '园林项目，识别鸟类声音和识别绿化，以及测量人脑电和心率的智能设备',
     icon: DeviceCardsIcon,
   },
   {
     name: 'X Edge',
+    link: '/X_Edge',
     description:
       '包括MR实验室的场地设计、虚拟的地铁站和开车的场景',
     icon: DeviceClockIcon,
   },
   {
     name: 'X Sphere',
+    link: 'X_Sphere',
     description:
       '包括MR实验室的场地设计、虚拟的地铁站和开车的场景',
     icon: DeviceListIcon,
@@ -210,13 +216,15 @@ export function SecondaryFeatures() {
           {features.map((feature) => (
             <li
               key={feature.name}
-              className="rounded-2xl border border-gray-200 p-8"
+              className="rounded-2xl border border-gray-200 p-8 hover:shadow-lg"
             >
-              <feature.icon className="h-8 w-8" />
-              <h3 className="mt-6 font-semibold text-gray-900">
-                {feature.name}
-              </h3>
-              <p className="mt-2 text-gray-700">{feature.description}</p>
+              <Link href={feature.link} passHref>
+                <feature.icon className="h-8 w-8" />
+                <h3 className="mt-6 font-semibold text-gray-900">
+                  {feature.name}
+                </h3>
+                <p className="mt-2 text-gray-700">{feature.description}</p>
+              </Link>
             </li>
           ))}
         </ul>

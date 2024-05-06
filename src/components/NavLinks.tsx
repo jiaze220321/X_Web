@@ -13,10 +13,10 @@ export function NavLinks() {
     // ['Reviews', '/#reviews'],
     // ['Pricing', '/#pricing'],
     // ['FAQs', '/#faqs'],
-    ['X LAB', '/#features'],
-    ['X Man', '/#reviews'],
-    ['X Edge', '/#pricing'],
-    ['X Sphere', '/#faqs'],
+    ['X LAB', '/X_LAB'],
+    ['X Man', '/X_Man'],
+    ['X Edge', '/X_Edge'],
+    ['X Sphere', '/X_Sphere'],
   ].map(([label, href], index) => (
     <Link
       key={label}

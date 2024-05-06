@@ -9,6 +9,7 @@ import { Container } from '@/components/Container'
 // import { Logo } from '@/components/Logo'
 import { Logomark } from '@/components/Logo'
 import { NavLinks } from '@/components/NavLinks'
+import React from 'react'
 
 function MenuIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -104,7 +105,7 @@ export function Header() {
                           className="absolute inset-x-0 top-0 z-0 origin-top rounded-b-2xl bg-gray-50 px-6 pb-6 pt-32 shadow-2xl shadow-gray-900/20"
                         >
                           <div className="space-y-4">
-                            <MobileNavLink href="@/components/SecondaryFeatures">
+                            <MobileNavLink href="/X_LAB">
                               X LAB
                             </MobileNavLink>
                             <MobileNavLink href="/#reviews">
