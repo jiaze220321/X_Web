@@ -216,7 +216,7 @@ export function SecondaryFeatures() {
           {features.map((feature) => (
             <li
               key={feature.name}
-              className="rounded-2xl border border-gray-200 p-8 hover:shadow-lg"
+              className="rounded-2xl border border-gray-200 p-8 hover:border-cyan-500 hover:shadow-lg transition"
             >
               <Link href={feature.link} passHref>
                 <feature.icon className="h-8 w-8" />

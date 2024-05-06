@@ -17,6 +17,7 @@ export function NavLinks() {
     ['X Man', '/X_Man'],
     ['X Edge', '/X_Edge'],
     ['X Sphere', '/X_Sphere'],
+    ['Blog', '/Blog'],
   ].map(([label, href], index) => (
     <Link
       key={label}
