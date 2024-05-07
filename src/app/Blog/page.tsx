@@ -1,13 +1,8 @@
-import Link from 'next/link'
+"use client";
 
-import React from 'react';
+import { useTranslation } from "next-i18next";
 
-function App() {
-  return (
-    <div style={{ textAlign: 'center', marginTop: '20vh', fontSize: '24px', fontWeight: 'bold' }}>
-      Hello, welcome to Blog!
-    </div>
-  );
+export default function BlogPage() {
+  const { t } = useTranslation("common");
+  return <h1>{t('welcome')}</h1>;
 }
-
-export default App;

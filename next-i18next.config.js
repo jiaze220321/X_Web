@@ -1,6 +1,6 @@
 module.exports = {
     i18n: {
-        defaultLocale: 'en', // 默认语言
+        defaultLocale: 'zh', // 默认语言
         locales: ['en', 'zh'], // 支持的语言列表
     },
 };
