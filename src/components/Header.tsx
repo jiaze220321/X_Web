@@ -105,17 +105,17 @@ export function Header() {
                           className="absolute inset-x-0 top-0 z-0 origin-top rounded-b-2xl bg-gray-50 px-6 pb-6 pt-32 shadow-2xl shadow-gray-900/20"
                         >
                           <div className="space-y-4">
-                            <MobileNavLink href="/X_LAB">
-                              X LAB
+                            <MobileNavLink href="/X_Edge">
+                              X Edge
                             </MobileNavLink>
                             <MobileNavLink href="/X_Man">
                               X Man
                             </MobileNavLink>
-                            <MobileNavLink href="/X_Edge">
-                              X Edge
-                            </MobileNavLink>
                             <MobileNavLink href="/X_Sphere">
                               X Sphere
+                            </MobileNavLink>
+                            <MobileNavLink href="/X_Cloud">
+                              X Cloud
                             </MobileNavLink>
                             <MobileNavLink href="/Blog">
                               Blog
