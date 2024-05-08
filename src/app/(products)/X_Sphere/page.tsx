@@ -6,12 +6,14 @@ import Video from '@/components/Video';
 import { useTranslation } from "next-i18next";
 
 function X_Sphere() {
+  const { t } = useTranslation("common");
+
   return (
     <div style={{ textAlign: 'center', fontSize: '24px', fontWeight: 'bold' }}>
       <Video 
         videoSrc = '/videos/temp.mp4'
         title = "X Sphere"
-        describe = 'X Sphere description'/>
+        describe = {t('X_Sphere_intro')}/>
     </div>
   );
 }

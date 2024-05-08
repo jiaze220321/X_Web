@@ -26,24 +26,24 @@ const Video: React.FC<CustomVideoProps> = ({ videoSrc, title, describe, width = 
   };
 
   return (
-    <div className={styles.videoContainer}>
-      <div onClick={handlePlayPause}>
-        {/* {!isPlaying && (
-          <img src="../images/3DSphere.jpg" alt="Video Thumbnail" className={styles.thumbnail} />
-        )} */}
-        {!isPlaying && <button className={styles.playButton}>►</button>}
-      </div>
-
-      <video ref={videoRef} className={styles.videoElement} controls={isPlaying} width="600">
-        <source src={videoSrc} type="video/mp4" />
-        您的浏览器不支持视频标签。
-      </video>
-
-      <div className={styles.videoInfo}>
-        <h3>{title}</h3>
-        <p>{describe}</p>
+    <div className={styles.fatherContainer}>
+      <div className={styles.outerContainer}>
+        <div className={styles.aboveContainer}>
+          <h3>{title}</h3>
+          <p>{describe}</p>
+        </div>
+        <div className={styles.belowContainer}>
+          <div onClick={handlePlayPause} className={styles.thumbnailContainer}>
+            {!isPlaying && <button className={styles.playButton}>►</button>}
+          </div>
+          <video ref={videoRef} className={styles.videoElement} controls={isPlaying} width={width}>
+            <source src={videoSrc} type="video/mp4" />
+            您的浏览器不支持视频标签。
+          </video>
+        </div>
       </div>
     </div>
+    
   );
 };
 
