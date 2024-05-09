@@ -1,0 +1,8 @@
+-- AlterTable
+ALTER TABLE `user` MODIFY `avatar` VARCHAR(191) NULL,
+    MODIFY `address` VARCHAR(191) NULL,
+    MODIFY `wechat` VARCHAR(191) NULL,
+    MODIFY `qq` VARCHAR(191) NULL,
+    MODIFY `birthday` DATETIME(3) NULL,
+    MODIFY `gender` INTEGER NULL DEFAULT 0,
+    MODIFY `company` VARCHAR(191) NULL;
