@@ -4,6 +4,7 @@
 import React from "react";
 import styles from "./BlogList.module.css";
 import { useTranslation } from "next-i18next";
+import Carousel from "./Carousel";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -44,13 +45,14 @@ const BlogList: React.FC<BlogListProps> = ({ posts }) => {
   return (
     <div className={styles.blogList}>
       <div className={styles.aboveContainer}>
-        <Slider {...settings} className={styles.sliderContainer}>
+        {/* <Slider {...settings} className={styles.sliderContainer}>
           {images.map((image, index) => (
             <div key={index}>
               <img src={image} alt={`image-${index}`} className={styles.sliderImage}/>
             </div>
           ))}
-        </Slider>
+        </Slider> */}
+        <Carousel images={images} />
       </div>
       <div className={styles.belowContainer}>
         <h1 className={styles.heading}>{t('latest_releases')}</h1>

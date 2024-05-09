@@ -1,0 +1,115 @@
+/* Carousel.module.css */
+
+.carouselContainer {
+    position: relative;
+    /* width: 80%; */
+    max-width: 1280px;
+    margin: auto;
+    overflow: hidden;
+    /* border: 2px solid #ddd; */
+    border-radius: 8px;
+  }
+  
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .slide {
+    min-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .slide img {
+    width: 100%;
+    height: 400px; /* 调整高度，使走马灯更矮 */
+    object-fit: cover; /* 确保图片保持比例，不变形 */
+    border-radius: 8px;
+  }
+  
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    border: none;
+    border-radius: 15px;
+    z-index: 10;
+    outline: none;
+  }
+  
+  .prev {
+    left: 10px;
+  }
+  
+  .next {
+    right: 10px;
+  }
+  
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(220, 220, 220, 0.3);
+  }
+  
+  .dots {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 3px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  
+  .dot.active {
+    background-color: #717171;
+  }
+  
+  /* 媒体查询 - 移动设备（最大宽度 768px） */
+@media (max-width: 768px) {
+  .carouselContainer {
+    /* width: 90%; */
+    max-width: 100%;
+  }
+
+  .slide img {
+    height: 150px; /* 更小的高度适应移动设备 */
+  }
+
+  .prev, .next {
+    width: 25px;
+    height: 25px;
+    font-size: 14px;
+  }
+}
+
+/* 媒体查询 - 平板设备（768px 到 1024px） */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .carouselContainer {
+    /* width: 85%; */
+    max-width: 100%;
+  }
+
+  .slide img {
+    height: 280px; /* 中等高度适应平板设备 */
+  }
+
+  .prev, .next {
+    width: 28px;
+    height: 28px;
+    font-size: 16px;
+  }
+}
