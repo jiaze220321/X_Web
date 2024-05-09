@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh;
+  /* height: 80vh; */
   width: 100%;
   /* background: #FDF1E6; */
 }
@@ -65,6 +65,7 @@
   max-width: 60%; /* 设置最大宽度为容器宽度的百分比，也可以改为固定像素值 */
   margin: 0 auto 15px auto; /* 居中显示段落 */
   color: #555; /* 较浅的字体颜色 */
+  text-align: justify;
 }
 
 .belowContainer {
@@ -122,4 +123,75 @@
   width: 100%;
   height: 100%;
   /* border-radius: 10px; */
+}
+
+/* 移动设备（最大宽度 768px） */
+@media (max-width: 768px) {
+  .fatherContainer {
+    height: auto;
+  }
+
+  .outerContainer {
+    padding: 10px;
+    max-width: 100%;
+  }
+
+  .aboveContainer {
+    padding: 10px;
+  }
+
+  .aboveContainer h3 {
+    font-size: 32px;
+  }
+
+  .aboveContainer p {
+    font-size: 14px;
+    max-width: 80%;
+  }
+
+  .belowContainer {
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  .playButton {
+    font-size: 40px;
+    width: 60px;
+    height: 60px;
+  }
+
+  .videoElement {
+    width: 100%;
+  }
+}
+
+/* 平板设备（768px 到 1024px） */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .fatherContainer {
+    height: auto;
+  }
+
+  .outerContainer {
+    padding: 15px;
+    max-width: 90%;
+  }
+
+  .aboveContainer h3 {
+    font-size: 40px;
+  }
+
+  .aboveContainer p {
+    font-size: 16px;
+    max-width: 70%;
+  }
+
+  .playButton {
+    font-size: 45px;
+    width: 70px;
+    height: 70px;
+  }
+
+  .videoElement {
+    width: 100%;
+  }
 }
