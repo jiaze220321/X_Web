@@ -1,15 +1,44 @@
+"use client";
+
 import Link from 'next/link'
 
 import { AuthLayout } from '@/components/AuthLayout'
 import { Button } from '@/components/Button'
 import { TextField } from '@/components/Fields'
-import { type Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: 'Sign In',
-}
+import { useState } from "react";
 
 export default function Login() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleLogin = async (e: React.FormEvent) => {
+    e.preventDefault(); // 阻止默认提交行为
+
+    try {
+      const response = await fetch("/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username, password }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        // 存储 JWT 令牌或其他会话信息
+        localStorage.setItem("token", result.token);
+        setMessage("登录成功！");
+      } else {
+        setMessage(result.message || "登录失败");
+      }
+    } catch (error) {
+      console.error("Login Error:", error);
+      setMessage("发生错误，请重试");
+    }
+  };
+
   return (
     <AuthLayout
       title="Sign in to account"
@@ -23,20 +52,22 @@ export default function Login() {
         </>
       }
     >
-      <form>
+      <form onSubmit={handleLogin}>
         <div className="space-y-6">
           <TextField
-            label="Email address"
-            name="email"
-            type="email"
-            autoComplete="email"
+            label="Username"
+            name="username"
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
             required
           />
           <TextField
             label="Password"
             name="password"
             type="password"
-            autoComplete="current-password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             required
           />
         </div>
@@ -44,6 +75,7 @@ export default function Login() {
           Sign in to account
         </Button>
       </form>
+      {message && <p>{message}</p>}
     </AuthLayout>
   )
 }
