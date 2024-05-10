@@ -38,4 +38,28 @@ model User {
   gender Int? @default(0)
   company String?
   isDelete Boolean @default(false)
+
+  // 关联关系
+  authCodes AuthCode[]
+  accessTokens AccessToken[]
+}
+
+model AuthCode {
+  code String @id
+  userId Int
+  clientId String
+  expiresAt DateTime
+
+  // 关联关系
+  user User @relation(fields: [userId], references: [id])
+}
+
+model AccessToken {
+  token String @id
+  userId Int
+  clientId String
+  expiresAt DateTime
+
+  // 关联关系
+  user User @relation(fields: [userId], references: [id])
 }
