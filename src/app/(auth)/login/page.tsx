@@ -1,3 +1,5 @@
+// src/app/auth/login/page.tsx
+
 "use client";
 
 import Link from 'next/link'
@@ -6,11 +8,17 @@ import { AuthLayout } from '@/components/AuthLayout'
 import { Button } from '@/components/Button'
 import { TextField } from '@/components/Fields'
 import { useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 
 export default function Login() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const redirect = searchParams.get("redirect") || "/dashboard";
+  console.log('redirect', redirect);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
+  const [error, setError] = useState<string | null>(null);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault(); // 阻止默认提交行为
@@ -30,6 +38,9 @@ export default function Login() {
         // 存储 JWT 令牌或其他会话信息
         localStorage.setItem("token", result.token);
         setMessage("登录成功！");
+        console.log("result.token", result.token);
+        // router.push(`/api/oauth/authorize?client_id=example_client_id&redirect_uri=https://client.example.com/callback&response_type=code&state=xyz`);
+        router.push(redirect);
       } else {
         setMessage(result.message || "登录失败");
       }

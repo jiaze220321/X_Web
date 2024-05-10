@@ -1,0 +1,18 @@
+<!-- authorize.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Third-Party OAuth Authorization</title>
+</head>
+<body>
+    <h1>Authorize Request</h1>
+    <form id="authorize-form" action="http://localhost:3000/api/oauth/authorize" method="GET">
+        <input type="hidden" name="client_id" value="example_client_id">
+        <input type="hidden" name="redirect_uri" value="http://localhost:3000/dashboard">
+        <input type="hidden" name="response_type" value="code">
+        <input type="hidden" name="state" value="xyz123">
+        <button type="submit">Authorize</button>
+    </form>
+</body>
+</html>

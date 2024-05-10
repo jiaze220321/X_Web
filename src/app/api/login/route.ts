@@ -42,6 +42,8 @@ export async function POST(request: Request) {
     { expiresIn: "1h" } // 令牌有效期为 1 小时
   );
 
+  console.log('token',token);
+
   // 返回登录成功的状态和令牌
   return NextResponse.json({
     success: true,
