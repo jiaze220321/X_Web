@@ -42,7 +42,7 @@ export async function GET(request: Request) {
   await insertAuthCode({ code: authorizationCode, userId: user.id, clientId, expiresAt: new Date(Date.now() + 600000) }); // 10 分钟后过期
 
   // 返回到客户端应用，附带授权码
-  const redirectUrl = `${redirectUri}?code=${authorizationCode}&state=${state}`;
+  const redirectUrl = `${redirectUri}?authorizationCode=${authorizationCode}&state=${state}`;
   console.log('redirectUrl');
   console.log(`Redirect URL: ${redirectUrl}`);
   return NextResponse.redirect(redirectUrl);

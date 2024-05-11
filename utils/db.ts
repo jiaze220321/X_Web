@@ -44,9 +44,13 @@ interface User {
 // 从请求中获取用户信息
 export async function getUserFromSession(request: Request) {
   // 从请求头或 Cookies 中获取 JWT 令牌
-  const authHeader = request.headers.get('Authorization');
-  console.log('utils.db request.headers.authHeader', authHeader);
-  const token = authHeader && authHeader.split(' ')[1]; // 假设 `Bearer <token>` 格式
+  console.log('request.url@@@@@@@@', request.url);
+  const url = new URL(request.url);
+  const token = url.searchParams.get('token');
+  console.log('token@@@@@@@', token);
+  // const authHeader = request.headers.get('Authorization');
+  // console.log('utils.db request.headers.authHeader', authHeader);
+  // const token = authHeader && authHeader.split(' ')[1]; // 假设 `Bearer <token>` 格式
   if (!token) {
     console.log('No authorization token found');
     return null;
@@ -85,9 +89,16 @@ export async function insertAuthCode({ code, userId, clientId, expiresAt }: Auth
 
 // 验证授权码
 export async function validateAuthCode(code: string, clientId: string) {
+  console.log('validateAuthCode code, clientId', code, clientId);
   const authCode = await prisma.authCode.findUnique({ where: { code } });
+  console.log('validateAuthCode authCode', authCode);
 
   // 检查授权码是否存在、是否属于请求的客户端，并且未过期
+  if(authCode){
+    console.log('validateAuthCode authCode.expiresAt', authCode.expiresAt || '');
+    console.log('validateAuthCode new Date()', new Date());
+  }
+
   if (authCode && authCode.clientId === clientId && authCode.expiresAt > new Date()) {
     return authCode;
   }
